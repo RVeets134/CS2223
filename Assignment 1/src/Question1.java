@@ -1,45 +1,43 @@
+import java.util.Scanner;
 
 public class Question1 {
 
 	public static void main(String[] args) {
 
-		//System.out.println("Select a function.");
-		//int input = 1;
-		for(int n = 1;n <= 3;n++) {
-			System.out.println(testFunctions(n));
-		}
-		
+		Scanner in = new Scanner(System.in);
+		System.out.println("Select a function.");
+		int input = in.nextInt();
+		System.out.println(testFunctions(input));
+
 	}
 	
 	private static long testFunctions(int selection) {
 		
 		long elapsedTime = 0;
-		int count1 = 0;
-		int count2 = 0;
-		int count3 = 0;
-		int N = 100000;
+		final int N = 100000;
 		long start = 0;
 		long end = 0;
+		long sum = 0;
 		
 		switch(selection) {
 		
 			// Linear function
 			case 1:
 				start = System.currentTimeMillis();
-				while(count1 < N) {
-					count1 += 1;
-				}
+				for(int count1 = 0;count1 < N;count1++) {
+					sum *= 1;
+				}	
 				end = System.currentTimeMillis();
 				elapsedTime = end - start;
 				break;
 			//Quadratic function
 			case 2:
 				start = System.currentTimeMillis();
-				while(count1 < N) {
-					while(count2 < N) {
-						count2 += 1;
+				for(int count1 = 0;count1 < N;count1++) {
+					for(int count2 = 0;count2 < N;count2++) {
+						sum *= 1;
 					}
-					count1 += 1;
+					sum *= 1;
 				}
 				end = System.currentTimeMillis();
 				elapsedTime = end - start;
@@ -47,14 +45,14 @@ public class Question1 {
 			//Cubic function	
 			case 3:
 				start = System.currentTimeMillis();
-				while(count1 < N) {
-					while(count2 < N) {
-						while(count3 < N) {
-							count3 += 1;
+				for(int count1 = 0;count1 < N;count1++) {
+					for(int count2 = 0;count2 < N;count2++) {
+						for(int count3 = 0;count3 < N;count3++) {
+							sum *= 1;
 						}
-						count2 += 1;
+						sum *= 1;
 					}
-					count1 += 1;
+					sum *= 1;
 				}
 				end = System.currentTimeMillis();
 				elapsedTime = end - start;
