@@ -1,12 +1,9 @@
-import java.util.Scanner;
 
 public class Question1 {
 
 	public static void main(String[] args) {
 
-		Scanner in = new Scanner(System.in);
-		System.out.println("Select a function.");
-		int input = in.nextInt();
+		int input = Integer.parseInt(args[0]);
 		System.out.println(testFunctions(input));
 
 	}
@@ -57,6 +54,9 @@ public class Question1 {
 				end = System.currentTimeMillis();
 				elapsedTime = end - start;
 				break;
+			//Default case	
+			default:
+				System.out.println("Invalid argument.");
 		}
 		
 		return elapsedTime;
